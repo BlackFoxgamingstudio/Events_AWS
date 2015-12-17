@@ -1,0 +1,57 @@
+<h1 class="text-center">Welcome!</h1>
+<div class="row">
+	<p class="text-danger text-center"><%= flash[:errors] %></p>
+	<div class="col-lg-4 col-lg-offset-1">
+		<h3>Register</h3>
+		<form class="form-horizontal" action="/users" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+			<div class="form-group">
+				<label for="first_name">First Name: </label>
+				<input class="form-control" type="text" id="first_name" name="user[first_name]" />
+			</div>
+			<div class="form-group">
+				<label for="last_name">Last Name: </label>
+				<input class="form-control" type="text" id="last_name" name="user[last_name]" />
+			</div>
+			<div class="form-group">
+				<label for="email">Email: </label>
+				<input class="form-control" type="email" id="email" name="user[email]" />
+			</div>
+			<div class="form-group">
+				<label for="location">Location: </label>
+				<input class="form-control" type="text" id="first_name" name="user[location]" />
+				<select class="form-control" name="user[state]">
+					<option value="WA" selected>WA</option>
+					<option value="OH">OH</option>
+					<option value="MI">MI</option>
+					<option value="NY">NY</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="password">Password: </label>
+				<input class="form-control" type="password" id="password" name="user[password]" />
+			</div>
+			<p>* Password should be at least 8 characters </p>
+			<div class="form-group">
+				<label for="c_password">Confirm PW: </label>
+				<input class="form-control" type="password" id="c_password" name="user[c_password]" />
+			</div>
+			<input type="submit" value="Register" />
+		</form>
+	</div>
+	<div class="col-lg-4 col-lg-offset-2">
+		<h3>Login</h3>
+		<form class="form-horizontal" action="/login" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+			<div class="form-group">
+				<label for="email">Email: </label>
+				<input class="form-control" type="email" name="user[email]" id="email" />
+			</div>
+			<div class="form-group">
+				<label for="password">Password: </label>
+				<input class="form-control" type="password" name="user[password]" id="password" />
+			</div>
+			<input type="submit" value="Login" />
+		</form>
+	</div>
+</div>
